@@ -2,6 +2,7 @@ require("dotenv").config()
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const ProductRoute = require('./route/productRoute')
 
 const app = express()
 
@@ -11,6 +12,8 @@ app.use(cors())
 app.get('/',(req,res)=>{
     res.send("HELLO")
 })
+
+app.use('/api/products1',ProductRoute)
 
 app.listen(process.env.PORT || 5000)
 
